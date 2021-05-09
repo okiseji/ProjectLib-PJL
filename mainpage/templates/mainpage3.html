@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PJL System</title>
+</head>
+<body>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>预约</h2>
+        姓名<input type="text" name="usr"/>
+        房间<input type="text" name="room"/>
+        月份<input type="text" name="month"/>
+        日期<input type="text" name="day"/>
+        开始时间<input type="text" name="hour"/>
+        持续时间<input type="text" name="length"/>
+        <input type="submit" value="预约">
+    </form>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>取消</h2>
+        姓名<input type="text" name="usrcancel"/>
+        <input type="submit" value="取消">
+    </form>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>刷新</h2>
+        姓名<input type="text" name="usrrefresh"/>
+        <input type="submit" value="刷新">
+    </form>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>录入信息并进入库</h2>
+        姓名<input type="text" name="usrenter"/>
+        学号<input type="text" name="stuid"/>
+        密码<input type="password" name="password"/>
+        卡号(可不填)<input type="text" name="cardno"/>
+        <input type="submit" value="录入">
+    </form>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>离开库</h2>
+        姓名<input type="text" name="usrleave"/>
+        <input type="submit" value="离开">
+    </form>
+    <form action="/operate/" method="post">
+        {% csrf_token %}
+        <h2>重返库</h2>
+        姓名<input type="text" name="usrback"/>
+        <input type="submit" value="重返">
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PJL System</title>
+</head>
+<body>
+    <h1>留言</h1>
+    <form action="/msggate/" method="post">
+        {% csrf_token%}
+        发送者<input type="text" name="userA"/> <br>
+        接收者<input type="text" name="userB"/> <br>
+        内容<input type="text" name="msg"/> <br>
+        <input type="submit"  value="提交" />
+    </form>
+    <h1>获取</h1>
+    <form action="/msggate/" method="get">
+        接收者<input type="text" name="userC" /><br>
+        <input type="submit" value="获取"/>
+    </form>
+    <table border="1">
+        <thead>
+            <th>时间</th>
+            <th>来源</th>
+            <th>内容</th>
+        </thead>
+        <br>
+        <tbody>
+            {% for line in data %}
+            <tr>
+                <td>{{ line.time }}</td>
+                <td align="center">{{ line.userA }}</td>
+                <td>{{ line.msg }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+<!--    <form action="/operate/" method="get">-->
+<!--        <h2>确认</h2>-->
+<!--        姓名<input type="text" name="usr"/>-->
+<!--        <input type="submit" value="确认"><br>-->
+<!--        <p>{{% data %}}</p>-->
+<!--    </form>-->

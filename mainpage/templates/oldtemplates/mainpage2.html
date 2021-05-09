@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PJL System</title>
+</head>
+<body>
+<h2>查看预约情况</h2>
+<form action="/index/" method="get">
+    姓名<input type="text" name="usrcheck" />
+    <input type="submit" value="获取"/>
+</form>
+{{ data.check }}
+<h2>网络状况</h2>
+{{ data.network }}
+<h2>预约情况</h2>
+{{ data.list }}
+<h2>手动日志</h2>>
+{{ data.list2 }}
+</body>
+</html>
